@@ -1,0 +1,52 @@
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @include breakpoint-up(large) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  svg {
+    display: inline;
+  }
+
+  .flex {
+    flex-direction: column;
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  .container {
+    justify-content: space-between;
+  }
+  .logo {
+    text-align: center;
+    padding-bottom: 1rem;
+    @include breakpoint-up(large) {
+      padding-bottom: 0;
+    }
+  }
+
+  li {
+    padding: 1rem 0;
+    letter-spacing: 1.5px;
+    font-size: $x-normal-font-size;
+    @include breakpoint-up(large) {
+      padding: 0 2rem 0;
+    }
+  }
+
+  .social-links {
+    padding-top: 1.5rem;
+    @include breakpoint-up(large) {
+      padding-top: 0;
+    }
+
+    svg:hover,
+    svg:focus {
+      path {
+        fill: $secondColor;
+      }
+    }
+  }
+}

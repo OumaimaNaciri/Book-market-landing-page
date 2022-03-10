@@ -1,0 +1,52 @@
+.extantsion {
+  // layout
+  .header-section {
+    padding-bottom: 2rem;
+  }
+  .center {
+    flex-direction: column;
+    @include breakpoint-up(large) {
+      flex-direction: row;
+    }
+  }
+
+  //   component
+  .card {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 2rem;
+    padding: 0 1rem 0;
+
+    & > div {
+      @include shadow;
+      padding-bottom: 1rem;
+      border-radius: 15px;
+    }
+    .icon {
+      width: 100%;
+      padding-top: 3rem;
+      padding-bottom: 1.5rem;
+      svg {
+        display: inline;
+      }
+    }
+    h3 {
+      span {
+        display: block;
+        font-size: $l-smaller-font-size;
+        color: $firstColor-light;
+        font-weight: 400;
+        padding: 0.5rem 0 1.5rem 0;
+      }
+    }
+
+    .dots {
+      padding-bottom: 1.5rem;
+    }
+    .button {
+      padding: 0.8rem 2rem;
+      font-size: $l-smaller-font-size;
+    }
+  }
+}

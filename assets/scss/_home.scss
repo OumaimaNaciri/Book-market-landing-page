@@ -1,0 +1,63 @@
+.home {
+  .row {
+    padding-bottom: 3rem;
+
+    &__one {
+      grid-row: 2/3;
+      @include breakpoint-up(large) {
+        grid-row: 1/2;
+      }
+    }
+    &__two {
+      grid-row: 1/2;
+      @include image_size;
+    }
+  }
+
+  &__image {
+    @include image;
+    &__before {
+      border-radius: 0 0 0 115px;
+      left: 2rem;
+      @include breakpoint-up(small) {
+        width: 80%;
+        left: 4rem;
+        transform: translateX(20%);
+      }
+      @include breakpoint-up(xlarge) {
+        left: calc((100vw - 992px) / 2);
+      }
+    }
+
+    &::after {
+      background-image: url(./../images/illustration-hero.svg);
+      @include breakpoint-up(small) {
+      }
+      @include breakpoint-up(xlarge) {
+      }
+    }
+  }
+
+  .center {
+    flex-direction: column;
+  }
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+  p {
+    padding-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .btns {
+    width: 100%;
+    .button {
+      margin-bottom: 1rem;
+    }
+    span {
+      display: inline-block;
+      width: 3.5px;
+    }
+  }
+}

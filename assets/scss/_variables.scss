@@ -1,0 +1,35 @@
+// color
+
+$firstColor: hsl(231, 69%, 60%);
+$firstColor-light: hsl(229, 8%, 60%);
+$firstColor-dark: hsl(229, 31%, 21%);
+
+$secondColor: #fa5757;
+
+$white: hsl(255, 100%, 100%);
+$black: hsl(0, 0, 0);
+
+// typography
+
+$font-family: "Rubik", sans-serif;
+
+// small device
+$x-big-font-size: 2rem; // 32px
+$x-h2-font-size: 1.5rem; // 24px
+$x-normal-font-size: 0.938rem; // 15.008px
+$x-smaller-font-size: 0.75rem; // 12px
+
+// medium
+$normal-font-size: 1rem; //16px
+
+// beg device + 2px
+$l-big-font-size: 3rem; // 58px
+$l-h2-font-size: 2rem; // 34px
+$l-h3-font-size: 1.25rem; // 22px
+$l-normal-font-size: 1rem; // 18px
+$l-smaller-font-size: 0.875rem; // 14px
+
+//
+$header-height: 80px;
+
+$image__before: 300px;

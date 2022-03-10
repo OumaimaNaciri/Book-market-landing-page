@@ -1,0 +1,118 @@
+.features {
+  // _______________ feature navigation
+  .flex {
+    flex-direction: column;
+    margin-bottom: 5rem;
+    @include breakpoint-up(large) {
+      flex-direction: row;
+    }
+
+    // dising
+    div {
+      transition: all 0.05s ease 0.05s;
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      width: 100%;
+      text-align: center;
+      color: $firstColor-light;
+      font-size: 18px;
+      &:hover,
+      &:focus {
+        color: $secondColor;
+      }
+      &:first-child {
+        @include breakpoint-down(medium) {
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+      &.active {
+        color: $firstColor-dark;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          height: 4px;
+          width: 35%;
+          background-color: $secondColor;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  //______________featutre content
+  .row {
+    padding-bottom: 3rem;
+
+    &__image {
+      @include image_size;
+    }
+  }
+
+  &__image {
+    @include image;
+    &__before {
+      border-radius: 0 0 30% 0;
+      right: 2rem;
+      @media screen and (min-width: 539.99px) and (max-width: 991.99px) {
+        height: 60%;
+        width: 60%;
+        left: -2rem;
+      }
+      @include breakpoint-up(xlarge) {
+        right: calc((100vw - 992px) / 2);
+      }
+    }
+    &::after {
+      background-size: 90%;
+      left: 2rem;
+      @include breakpoint-up(small) {
+        width: 80%;
+        transform: translateX(20%);
+        // background-size: 100%;
+        @media screen and (min-width: 539.99px) and (max-width: 991.99px) {
+          background-size: 70%;
+          top: 0 !important;
+        }
+      }
+    }
+
+    &.one::after {
+      background-image: url(./../images/illustration-features-tab-1.svg);
+    }
+    &.two::after {
+      background-image: url(./../images/illustration-features-tab-2.svg);
+      top: -10%;
+    }
+    &.three::after {
+      background-image: url(./../images/illustration-features-tab-3.svg);
+
+      top: -10%;
+    }
+  }
+
+  @include breakpoint-down(large) {
+    button {
+      display: none;
+    }
+  }
+
+  //   typography
+  h3 {
+    font-size: $x-h2-font-size;
+    padding-bottom: 1rem;
+  }
+  p {
+    padding-bottom: 2rem;
+  }
+
+  // Js
+  .item {
+    display: none;
+    &.active {
+      display: grid;
+    }
+  }
+}

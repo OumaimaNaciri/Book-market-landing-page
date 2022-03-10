@@ -1,0 +1,251 @@
+// mixin stuff
+@mixin shadow {
+  box-shadow: #e4e1e1 0px 4px 6px 1px;
+}
+//  reset code
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  display: inline-block;
+}
+p {
+  max-width: 500px;
+}
+/* set up the body */
+body {
+  overflow-x: hidden;
+  font-family: $font-family;
+  font-size: $normal-font-size; //18px
+  color: $firstColor-light;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  @include breakpoint-up(large) {
+    text-align: start;
+  }
+}
+
+/*remove animation for peaple who've turned them off*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// customize
+h1,
+h2,
+h3 {
+  font-family: inherit;
+  color: $firstColor-dark;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: $x-big-font-size;
+  // medium
+  // @include breakpoint-up() {
+  // }
+  // large
+  @include breakpoint-up(large) {
+    font-size: $l-big-font-size;
+  }
+}
+
+h2 {
+  font-size: $x-h2-font-size;
+  // medium
+  // @include breakpoint-up() {
+  // }
+  // large
+  @include breakpoint-up(large) {
+    font-size: $l-h2-font-size;
+  }
+}
+
+p {
+  font-size: $x-normal-font-size;
+  // medium
+  @include breakpoint-up(medium) {
+    font-size: $normal-font-size;
+  }
+  // large
+  @include breakpoint-up(large) {
+    font-size: $l-normal-font-size;
+  }
+}
+
+// h3 depent to tyhe section required
+// utility
+/* ================== text ================ */
+.text-dark {
+  color: $firstColor-dark;
+} //use
+.text-light {
+  color: $firstColor-light;
+}
+.text-white {
+  color: $white;
+}
+.text-start {
+  text-align: start;
+}
+.text-bold {
+  font-weight: 500;
+}
+.uppercase {
+  text-transform: uppercase;
+} //use
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* bg-colors*/
+.bg-first {
+  background-color: $firstColor;
+} //use
+.bg-firstLight {
+  background-color: $firstColor-light;
+}
+.bg-firstdark {
+  background-color: $firstColor-dark;
+} //use
+
+.dis-none {
+  display: none !important;
+}
+
+.space {
+  display: inline-block;
+  width: 2rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// project needs
+.button {
+  //use
+  padding: 0.8rem 0.9rem;
+  border-radius: 7px;
+  border: none;
+  font-size: 15px; //16px
+  font-weight: 500;
+
+  &__first {
+    background-color: $firstColor;
+    color: $white;
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $firstColor;
+      border: 2px solid $firstColor;
+    }
+  }
+  &__light {
+    background-color: #f8f8f8;
+    color: rgba(0, 0, 0, 0.55);
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $firstColor-light;
+      border: 2px solid $firstColor-light;
+    }
+  }
+  &__second {
+    background-color: $secondColor;
+    color: $white;
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $secondColor;
+      border: 2px solid $secondColor;
+    }
+  }
+
+  // mobile nav
+  // @include breakpint-down(medium) {
+  // }
+
+  // &:hover{
+  //   animation
+  // }
+
+  @include shadow;
+}
+.header-section {
+  //use
+  text-align: center;
+  max-width: 450px; // 576px
+  margin: 0 auto;
+  h2 {
+    padding-bottom: 0.8rem;
+  }
+  p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.text-effect:hover,
+.text-effect:focus {
+  cursor: pointer;
+  color: $secondColor;
+}

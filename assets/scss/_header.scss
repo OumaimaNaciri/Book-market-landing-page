@@ -1,0 +1,131 @@
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: $white;
+  height: $header-height;
+
+  .container {
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &.show-nav {
+    @include breakpoint-down(large) {
+      height: 100vh;
+      background: rgba($firstColor-dark, 0.9);
+    }
+    .logo-text,
+    circle {
+      fill: $white;
+    }
+    .logo-sign {
+      fill: $firstColor-dark;
+    }
+    .button {
+      border: 2px solid $white;
+      box-shadow: none;
+      margin-top: 1rem;
+      &__second {
+        color: $white;
+        background-color: transparent;
+        text-align: center;
+        letter-spacing: 1px;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    .header {
+      border-bottom: 2px solid rgba($firstColor-light, 0.3);
+    }
+    .hambergur {
+      display: none;
+    }
+
+    .close {
+      display: block;
+      path {
+        fill: $white;
+      }
+    }
+
+    nav {
+      display: block;
+    }
+  }
+
+  .header {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height; //100px
+    @include breakpoint-up(large) {
+      .hambergur,
+      .close {
+        display: none;
+      }
+    }
+  }
+
+  // responsivnece
+  nav {
+    display: none;
+    @include breakpoint-up(large) {
+      display: block;
+      .social {
+        display: none;
+      }
+    }
+  }
+
+  ul.flex {
+    flex-direction: column;
+    @include breakpoint-up(large) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  li {
+    padding: 1rem 0;
+    // width: 100%;
+    &:not(:last-child) {
+      border-bottom: 2px solid rgba($firstColor-light, 0.3);
+      @include breakpoint-up(large) {
+        border-bottom: none;
+      }
+    }
+    a {
+      color: rgba($white, 0.8);
+
+      letter-spacing: 1px;
+      @include breakpoint-up(large) {
+        color: $firstColor-dark;
+      }
+    }
+    @include breakpoint-up(large) {
+      padding: 0 1rem;
+    }
+  }
+
+  .social {
+    position: absolute;
+    // center
+    left: 50%;
+    transform: translateX(-50%);
+    // \center
+    bottom: 2rem;
+    @include breakpoint-up(large) {
+      display: none;
+    }
+  }
+}

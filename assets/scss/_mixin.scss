@@ -1,0 +1,93 @@
+// my project is a max width 1140px.
+// +++++++++++++++++++++++++++++ media query
+/* ________________UP______________ */
+$breakpoint-up: (
+  //  "xsmall": "",
+  "small": " 540px",
+  "medium": "768px",
+  "large": "912px",
+  "xlarge": "1200px",
+  "xxlarge": "1500px"
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+/* ________________DOWN______________ */
+$breakpoint-down: (
+  //  "xsmall": "300px",
+  "small": "576px",
+  "medium": "768px",
+  "large": "992px",
+  "xlarge": "1200px",
+  // "xxlarge": "",
+);
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoint-down, $size)) {
+    @content;
+  }
+}
+
+// +++++++++++++++++++++++++ image markcup
+
+@mixin image {
+  position: relative;
+  // border: 2px solid green;
+  width: 100%;
+  height: 100%;
+  &__before {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: $firstColor;
+    bottom: 0;
+    z-index: -1;
+    @media screen and (min-width: 539.99px) and (max-width: 991.99px) {
+      height: 60%;
+    }
+
+    @include breakpoint-up(xxlarge) {
+      background-color: transparent;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @media screen and (min-width: 539.99px) and (max-width: 991.99px) {
+      background-size: 75%;
+      background-position: center center;
+    }
+  }
+}
+
+@mixin image_size {
+  height: 320px;
+  @media screen and (min-width: 540px) {
+    height: 400px;
+  }
+  @media screen and (min-width: 700px) {
+    height: 500px;
+  }
+  @media screen and (min-width: 900px) {
+    height: 550px;
+  }
+  @include breakpoint-up(large) {
+    height: 400px;
+  }
+
+  // xx small screen
+
+  @media screen and (max-width: 370px) {
+    height: 220px;
+  }
+}

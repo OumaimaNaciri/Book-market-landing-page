@@ -1,0 +1,47 @@
+.questions {
+  // layout
+  .center {
+    flex-direction: column;
+  }
+  .content {
+    width: 100%;
+    @include breakpoint-up(medium) {
+      width: 500px;
+    }
+  }
+  .quest {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &.flex {
+      justify-content: space-between;
+    }
+  }
+  .answer {
+    display: none;
+    text-align: start;
+    font-size: $x-normal-font-size;
+    line-height: 2;
+    transition: all 0.35 ease 0.35;
+  }
+  .button {
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+  }
+
+  // javaScript script
+  .question.active {
+    .quest {
+      border-bottom: none;
+
+      .icon {
+        transform: rotate(180deg);
+      }
+      path {
+        stroke: $secondColor;
+      }
+    }
+    .answer {
+      display: block;
+    }
+  }
+}

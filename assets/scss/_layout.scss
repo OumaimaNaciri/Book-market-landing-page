@@ -1,0 +1,62 @@
+// grid for the dynamiclayout of this landing page
+
+/* ---------------- GRID --------------------*/
+
+.grid {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  /*_______________ large_______________*/
+  @include breakpoint-up(large) {
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+  /*_______________ x-large_______________*/
+  @include breakpoint-up(x-large) {
+    gap: 5rem;
+  }
+}
+
+/* ----------------fixed behaive--------------------*/
+.flex {
+  display: flex;
+}
+
+/* ----------------utility classes--------------------*/
+.container {
+  max-width: 1140px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  /*_______________ medium_______________*/
+  // @include breakpoint-up(medium) {
+  // }
+  /*_______________ large_______________*/
+  @include breakpoint-up(large) {
+    max-width: 1140px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  /*_______________ x-large_______________*/
+  @include breakpoint-up(xlarge) {
+    margin: 0 auto;
+  }
+}
+
+.section {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  /*_______________ medium_______________*/
+  @include breakpoint-up(medium) {
+  }
+  /*_______________ large_______________*/
+  @include breakpoint-up(large) {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+// main
+main {
+  margin-top: $header-height;
+}
