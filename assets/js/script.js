@@ -80,6 +80,17 @@ function check() {
   }
 }
 
-// transition
+// Reveal Scroll
 
-const swup = new Swup();
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "80px",
+  duration: 2000,
+  reset: true,
+});
+
+/*SCROLL effect*/
+sr.reveal(".text-one", { delay: 200 });
+sr.reveal(".text-two", { delay: 300 });
+sr.reveal(".card", { origin: "right", delay: 400 });
+sr.reveal(".quest", { delay: 300 });
